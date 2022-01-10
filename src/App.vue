@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+<!--    <Hello v-bind:deliever-data="num"></Hello>-->
+<!--    <div>-->
+<!--      testNum-->
+<!--    </div>-->
+<!--    <button v-on:click="onClick">확인</button>-->
+    <div>
+      <router-link to="/">홈</router-link>
+      <router-link to="/page">페이지</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import Hello from '@/components/Hello';
 
 export default {
   name: "App",
-  components: {
-    HelloWorld,
+  // components: {
+  //   Hello
+  // },
+  data() {
+    return {
+      test: 'tttt',
+      num: this.$store.state.num
+    }
   },
+  methods: {
+    onClick() {
+      console.log('확인');
+    },
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
